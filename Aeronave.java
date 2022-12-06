@@ -1,15 +1,28 @@
 public abstract class Aeronave {
+    private int id;
     private String marca;
     private String modelo;
-    private String compania;
 
-    public Aeronave(
-            String marca,
-            String modelo,
-            String compania) {
+    public Aeronave( int id, String marca, String modelo) {
+        this.id = id;
         this.marca = marca;
         this.modelo = modelo;
-        this.compania = compania;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public String getModelo() {
@@ -20,16 +33,20 @@ public abstract class Aeronave {
         this.modelo = modelo;
     }
 
-    public String getCompania() {
-        return compania;
-    }
-
-    public void setCompania(String compania) {
-        this.compania = compania;
+    @Override
+    public String toString() {
+        return "Aeronave{" + "modelo=" + modelo + '}';
     }
 
     @Override
-    public String toString() {
-        return "Aeronave{" + "modelo=" + modelo + ", compania=" + compania + '}';
+    public boolean equals(Object object){
+        if(object == null || !(object instanceof Aeronave)){
+            return false;
+        }
+        final Aeronave other = (Aeronave) object;
+
+        return this.getId() == other.getId();
+
     }
+
 }

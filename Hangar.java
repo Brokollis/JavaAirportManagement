@@ -1,12 +1,23 @@
 public class Hangar {
+    private int id;
     private String local;
     private int idAviao;
     Aviao aviao;
 
-    public Hangar(String local, int idAviao) {
+    public Hangar(int id, String local, int idAviao) {
+        this.id = id;
         this.local = local;
         this.idAviao = idAviao;
     }
+
+    // id
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    };
 
     // local
     public String getLocal() {

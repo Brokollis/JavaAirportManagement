@@ -1,18 +1,26 @@
 public class Jato extends Aeronave {
-    private int velocidade;
     private String cor;
+    private int velocidade;
 
     public Jato(
+        int id,
         String marca, 
         String modelo, 
-        String compania,
-        int velocidade,
-        String cor
+        String cor,
+        int velocidade
     ){
-        super(marca, modelo, compania);
+        super(id, marca, modelo);
         this.velocidade = velocidade;
         this.cor = cor;
     }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    } 
 
     public int getVelocidade() {
         return velocidade;
@@ -22,17 +30,21 @@ public class Jato extends Aeronave {
         this.velocidade = velocidade;
     }
 
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
+    @Override
+    public String toString() {
+        return "Jato:" + "/ncor=" + cor + ", /nvelocidade=" + velocidade;
     }
 
     @Override
-    public String toString() {
-        return "Jato{" + "velocidade=" + velocidade + ", cor=" + cor + '}';
+    public boolean equals(Object object){
+        if(object == null || !(object instanceof Jato)){
+            return false;
+        }
+        final Jato other = (Jato) object;
+
+        return this.getId() == other.getId();
+
     }
-        
+
+    
 }

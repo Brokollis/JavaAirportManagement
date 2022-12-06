@@ -8,16 +8,16 @@ public abstract class DAO {
 
     public static Connection createConnection() {
         try {
-            final String URL = "jdbc:mysql://localhost:3306/usuario_teste";
+            final String URL = "jdbc:mysql://localhost:3306";
             final String USER = "root";
-            final String PASSWORD = "";
+            final String PASSWORD = "Wheniparkmyrr_1234";
 
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-
             return connection;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     public static void closeConnection() {
@@ -27,5 +27,7 @@ public abstract class DAO {
             throw new RuntimeException(e);
         }
     }
+
+   
 
 }

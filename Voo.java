@@ -1,4 +1,5 @@
 public class Voo {
+    private int id;
     private String numero;
     private String data;
     private String hora;
@@ -17,6 +18,7 @@ public class Voo {
     Helicoptero helicoptero;
 
     public Voo(
+        int id,
         String numero, 
         String data, 
         String hora, 
@@ -30,6 +32,7 @@ public class Voo {
         int idJato, 
         int idHelicoptero
     ){
+        this.id = id;
         this.numero = numero;
         this.data = data;
         this.hora = hora;
@@ -42,6 +45,15 @@ public class Voo {
         this.idAviao = idAviao;
         this.idJato = idJato;
         this.idHelicoptero = idHelicoptero;
+    }
+
+    // id
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     // numero
@@ -192,6 +204,25 @@ public class Voo {
     public String toString() {
         return "Voo{" + "numero=" + numero + ", data=" + data + ", hora=" + hora + ", origem=" + origem + ", destino=" + destino + ", piloto=" + piloto + ", copiloto=" + copiloto + ", observacao=" + observacao + ", idPista=" + idPista + ", pista=" + pista + ", idAviao=" + idAviao + ", aviao=" + aviao + ", idJato=" + idJato + ", jato=" + jato + ", idHelicoptero=" + idHelicoptero + ", helicoptero=" + helicoptero + '}';
     }
+
+    @Override
+
+    public boolean equals(Object object){
+        if(object == null || !(object instanceof Voo)){
+            return false;
+        }
+        final Voo other = (Voo) object;
+
+        return this.getId() == other.getId();
+
+    }
+
+
+
+
+
+
+
 
 
 }

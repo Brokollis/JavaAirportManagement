@@ -1,34 +1,20 @@
-public class Aeroporto {
-    private String nome;
-    private String cidade;
-    private String pais;
-    private List<Aeronave> aeronaves;
+public class  Aeroporto{
 
-    public Aeroporto(String nome, String cidade, String pais) {
-        this.nome = nome;
-        this.cidade = cidade;
-        this.pais = pais;
-        this.aeronaves = new ArrayList<>();
+    public static void main(String[] args){
+        System.out.println("Seja bem vindo ao aeroport Jatinho Feliz/n/n/n");
+        System.out.println("O que deseja fazer?/n/n");
+        System.out.println("1 - Cadastrar Aeronave");
+        System.out.println("2 - Cadastrar Companhia");
+        System.out.println("3 - Cadastrar Hangar");
+        System.out.println("4 - Cadastrar Voo");
+        System.out.println("5 - Cadastrar Pista");
+        System.out.println("6 - Listar Hangar");
+        System.out.println("7 - Listar Aeronave");
+        System.out.println("8 - Listar Companhia");
+        System.out.println("9 - Listar Voo");
+        System.out.println("10 - Listar Pista");
+        System.out.println("11 ");
+        System.out.println("12 - Sair");
+        
     }
-
-    public void addAeronave(Aeronave aeronave) {
-        aeronaves.add(aeronave);
-    }
-
-    public void removeAeronave(Aeronave aeronave) {
-        aeronaves.remove(aeronave);
-    }
-
-    public List<Aeronave> getAeronaves() {
-        return aeronaves;
-    }
-
-    public void setAeronaves(List<Aeronave> aeronaves) {
-        this.aeronaves = aeronaves;
-    }
-
-    @Override
-    public String toString() {
-        return "Aeroporto{" + "nome=" + nome + ", cidade=" + cidade + ", pais=" + pais + ", aeronaves=" + aeronaves + '}';
-    }
-}
+ }

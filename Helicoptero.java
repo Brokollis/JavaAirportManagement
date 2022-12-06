@@ -3,13 +3,14 @@ public class Helicoptero extends Aeronave {
     private int capacidade;
 
     public Helicoptero(
+        int id,
         String marca, 
         String modelo, 
         String compania,
         String cor,
         int capacidade
     ){
-        super(marca, modelo, compania);
+        super(id, marca, modelo);
         this.cor = cor;
         this.capacidade = capacidade;
     }
@@ -33,6 +34,17 @@ public class Helicoptero extends Aeronave {
     @Override
     public String toString() {
         return "Helicoptero{" + "cor=" + cor + ", capacidade=" + capacidade + '}';
+    }
+
+    @Override
+    public boolean equals(Object object){
+        if(object == null || !(object instanceof Helicoptero)){
+            return false;
+        }
+        final Helicoptero other = (Helicoptero) object;
+
+        return this.getId() == other.getId();
+
     }
 
 }
