@@ -6,7 +6,6 @@ public class Helicoptero extends Aeronave {
         int id,
         String marca, 
         String modelo, 
-        String compania,
         String cor,
         int capacidade
     ){

@@ -4,6 +4,10 @@ public class Companhia{
     private String nome;
     private String cnpj;
 
+    public Companhia() {
+
+    }
+
     public Companhia(int id, String nome, String cnpj) {
         this.id = id;
         this.nome = nome;
@@ -51,5 +55,9 @@ public class Companhia{
 
         return this.getId() == other.getId();
 
+    }
+
+    public static Companhia getByInt(int id) {
+        return new Companhia();
     }
 } 

@@ -1,20 +1,36 @@
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class Aviao extends Aeronave {
     private String prefixo;
     private int capacidade;
     private int id_companhia;
+    private Companhia companhia;
 
-    public Aviao(
+    public Aviao (
         int id,
         String marca, 
         String modelo, 
         String prefixo,
         int capacidade,
-        int id_companhia
-    ){
+        int id_companhia,
+        Companhia companhia
+    )throws SQLException{
         super(id, marca, modelo);
         this.prefixo = prefixo;
         this.capacidade = capacidade;
         this.id_companhia = id_companhia;
+        this.companhia = Companhia.getByInt(id_companhia);
+
+        PreparedStatement stmt = DAO.createConnection().prepareStatement("INSERT INTO aviao (id, marca, modelo, prefixo, capacidade, id_companhia) VALUES (?, ?, ?, ?, ?, ?)");
+        stmt.setInt(1, id);
+        stmt.setString(2, marca);
+        stmt.setString(3, modelo);
+        stmt.setString(4, prefixo);
+        stmt.setInt(5, capacidade);
+        stmt.setInt(6, id_companhia);
+        stmt.execute();
+        stmt.close();
     }
     
     public String getPrefixo() {
@@ -39,6 +55,14 @@ public class Aviao extends Aeronave {
 
     public void setId_companhia(int id_companhia) {
         this.id_companhia = id_companhia;
+    }
+
+    public Companhia getCompanhia() {
+        return companhia;
+    }
+
+    public void setCompanhia(Companhia companhia) {
+        this.companhia = companhia;
     }
 
     @Override
