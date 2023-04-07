@@ -31,4 +31,4 @@ Para executar a aplicação, basta rodar a classe principal Estacionamento.java 
 Este projeto se encontra em construção e por conta disso ainda se encontra na sua primeira versão.
 
 <h3>✒️ Autor:</h3>
-<strong>Vitor Aguiar</strong> - www.linkedin.com/in/vitor-aguiar-ab3937192/
+  <li>Vitor Aguiar - <a href="www.linkedin.com/in/vitor-aguiar-ab3937192/">LinkedIn</a></li>
